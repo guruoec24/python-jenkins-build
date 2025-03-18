@@ -1,0 +1,16 @@
+from collections import defaultdict
+class Solution:
+    def maxVowels(self, s: str, k: int) -> int:
+        vowel_set = set('aeoiu')
+        max_len = 0
+        left = 0
+        vowel_count = 0
+        count_map = defaultdict(int)
+        for right in range(len(s)):
+            vowel_count += 1 if s[right] in vowel_set else 0
+            while right - left +1 >= k:
+                max_len = max(max_len, vowel_count)
+                if s[left] in vowel_set:
+                    vowel_count -= 1
+                left += 1
+        return max_len
