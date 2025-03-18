@@ -14,3 +14,8 @@ class Solution:
                     vowel_count -= 1
                 left += 1
         return max_len
+
+if __name__ == "__main__":
+    print(Solution().maxVowels(s = "abciiidef", k = 3))
+    print(Solution().maxVowels(s = "aeiou", k = 2))
+    print(Solution().maxVowels(s = "leetcode", k = 3))
